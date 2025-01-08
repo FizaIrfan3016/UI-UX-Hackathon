@@ -67,10 +67,14 @@ const Navbar = () => {
                   placeholder="Search.."
                   className="pl-4 pr-10 py-2 rounded-full bg-black border border-yellow-500 text-white focus:outline-none"
                 />
-                <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-yellow-500" />
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-yellow-500">
+                <FaSearch  />
+                </div>
               </div>
               <Link href="/ShopingCart" className="hover:text-yellow-500 text-white">
-                <FaShoppingBag className="ml-4 text-white cursor-pointer hover:text-yellow-500" />
+              <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
+                <FaShoppingBag  />
+                </div>
               </Link>
             </div>
           </div>

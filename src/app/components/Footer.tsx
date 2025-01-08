@@ -1,10 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { PiClockClockwiseBold } from "react-icons/pi";
+// import { HiClock } from "react-icons/hi";
 import Image from "next/image";
-
-
-
-
 
 
 const Footer = () => {
@@ -18,7 +16,7 @@ return(
               <span className="text-[#FF9F0D]">St</span>ill Need Our Support ?
             </h2>
             <p className="text-xs sm:text-sm lg:text-base mt-2 sm:mt-[17px]">
-              Don't wait, make a smart & logical decision now. It's easy.
+              Don&apos;t wait, make a smart & logical decision now. It&apos;s easy.
             </p>
               </div>
               <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-0">
@@ -46,7 +44,9 @@ return(
                     </p>
                     <div className='flex items-start gap-3 sm:gap-4'>
                         <div className='bg-[#FF9F0D] flex-shrink-0 flex justify-center items-center w-[78px] sm:w-16 h-[72px] sm:h-16'>
-                        <PiClockClockwiseBold className="text-white text-2xl sm:text-3xl" />
+                        <div className="text-white text-2xl sm:text-3xl">
+                        <PiClockClockwiseBold  />
+                         </div>
                         </div>
                         <div>
                          <h3 className="text-white font-medium mb-1 text-sm sm:text-base">Opening Hours</h3>

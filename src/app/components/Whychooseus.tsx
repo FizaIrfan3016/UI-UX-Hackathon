@@ -13,9 +13,9 @@ const WhyChoose = () => {
   ]
 
   const features = [
-    { icon: <FaHamburger className="w-12 h-12" />, label: 'Fast Food' },
-    { icon: <FaCookieBite className="w-12 h-12" />, label: 'Lunch' },
-    { icon: <FaWineGlass className="w-12 h-12" />, label: 'Dinner' },
+    { icon: <FaHamburger />, label: 'Fast Food' },
+    { icon: <FaCookieBite  />, label: 'Lunch' },
+    { icon: <FaWineGlass  />, label: 'Dinner' },
   ]
 
   return (
@@ -106,7 +106,9 @@ const WhyChoose = () => {
               {features.map((feature, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-[#FF9F0D] w-30 h-28 rounded-2xl mx-auto mb-4 flex items-center justify-center text-white">
+                    {/* <div className="w-12 h-12" > */}
                     {feature.icon}
+                    {/* </div> */}
                   </div>
                   <span className="text-white font-medium">{feature.label}</span>
                 </div>
