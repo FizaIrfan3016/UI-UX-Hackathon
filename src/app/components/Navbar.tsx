@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaBars, FaSearch, FaShoppingBag, FaTimes } from 'react-icons/fa';
+import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser, FaShoppingCart } from 'react-icons/fa';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +46,7 @@ const Navbar = () => {
             <Link href="/blog" className="hover:text-yellow-500 text-white">
               Blog
             </Link>
-            <Link href="/" className="hover:text-yellow-500 text-white">
+            <Link href="/Page" className="hover:text-yellow-500 text-white">
               Pages
             </Link>
             <Link href="/about" className="hover:text-yellow-500 text-white">
@@ -71,9 +71,19 @@ const Navbar = () => {
                 <FaSearch  />
                 </div>
               </div>
-              <Link href="/ShopingCart" className="hover:text-yellow-500 text-white">
+              <Link href="./" className="hover:text-yellow-500 text-white">
               <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
                 <FaShoppingBag  />
+                </div>
+              </Link>
+              <Link href="/Signup" className="hover:text-yellow-500 text-white">
+              <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
+                <FaUser  />
+                </div>
+              </Link>
+              <Link href="/ShopingCart" className="hover:text-yellow-500 text-white">
+              <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
+                <FaShoppingCart  />
                 </div>
               </Link>
             </div>
