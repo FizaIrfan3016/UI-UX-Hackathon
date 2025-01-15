@@ -42,7 +42,7 @@ export default function Signin() {
             </button>
           </form>
           <div className="text-center mt-8">
-            <p>You don&apost have an account? <Link href="/Signup" className='text-yellow-500 font-semibold'>Signin</Link></p>
+            <p>You dont have an account? <Link href="/Signup" className='text-yellow-500 font-semibold'>Signin</Link></p>
             <p>or</p>
             
             <button className="w-full bg-black border text-white py-2 hover:text-yellow-500  rounded mt-2 flex items-center justify-center">
