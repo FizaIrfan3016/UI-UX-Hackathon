@@ -71,7 +71,7 @@ const Navbar = () => {
                 <FaSearch  />
                 </div>
               </div>
-              <Link href="./" className="hover:text-yellow-500 text-white">
+              <Link href="/shop" className="hover:text-yellow-500 text-white">
               <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
                 <FaShoppingBag  />
                 </div>
