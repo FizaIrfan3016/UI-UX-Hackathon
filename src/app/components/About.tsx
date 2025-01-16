@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Button from './Button';
+import Link from "next/link";
 
 const About = () => {
   const features = [
@@ -53,7 +54,7 @@ const About = () => {
             </div>
 
             <Button size="lg">
-              Read More
+             <Link href='/about'> Read More </Link>
             </Button>
           </div>
 

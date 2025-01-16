@@ -2,14 +2,19 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser, FaShoppingCart } from 'react-icons/fa';
+import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser, FaShoppingCart, FaChevronDown } from 'react-icons/fa';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
 
   return (
     <div>
-      <nav className="flex flex-col items-center p-4 bg-black">
+      <nav className="flex flex-col items-center p-4 bg-black z-50 relative">
         <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <Link href="/" className="text-yellow-500 font-bold text-2xl flex-grow text-center">
@@ -40,13 +45,64 @@ const Navbar = () => {
             <Link href="/" className="hover:text-yellow-500 text-white">
               Home
             </Link>
-            <Link href="/menu" className="hover:text-yellow-500 text-white">
-              Menu
-            </Link>
+            <div className="relative">
+              <button
+                onClick={toggleDropdown}
+                className="hover:text-yellow-500 text-white flex items-center"
+              >
+               <Link href='/menu'> Menu</Link> <FaChevronDown className="ml-2" />
+              </button>
+              {dropdownOpen && (
+                <div className="absolute left-0 top-full mt-2 w-40 bg-black border border-yellow-500 shadow-lg max-h-60 overflow-y-auto">
+                  <ul className="flex flex-col">
+                    <li className="hover:bg-yellow-500">
+                      <Link href="/menu/breakfast" className="block px-4 py-2 text-white">
+                        Breakfast
+                      </Link>
+                    </li>
+                    <li className="hover:bg-yellow-500">
+                      <Link href="/menu/lunch" className="block px-4 py-2 text-white">
+                        Lunch
+                      </Link>
+                    </li>
+                    <li className="hover:bg-yellow-500">
+                      <Link href="/menu/dinner" className="block px-4 py-2 text-white">
+                        Dinner
+                      </Link>
+                    </li>
+                    <li className="hover:bg-yellow-500">
+                      <Link href="/menu/fastfood" className="block px-4 py-2 text-white">
+                        Fast Food
+                      </Link>
+                    </li>
+                    <li className="hover:bg-yellow-500">
+                      <Link href="/menu/dessert" className="block px-4 py-2 text-white">
+                        Dessert
+                      </Link>
+                    </li>
+                    <li className="hover:bg-yellow-500">
+                      <Link href="/menu/juice" className="block px-4 py-2 text-white">
+                        Juice
+                      </Link>
+                    </li>
+                    <li className="hover:bg-yellow-500">
+                      <Link href="/menu/snack" className="block px-4 py-2 text-white">
+                        Snack
+                      </Link>
+                    </li>
+                    <li className="hover:bg-yellow-500">
+                      <Link href="/menu/soups" className="block px-4 py-2 text-white">
+                        Soups
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
             <Link href="/blog" className="hover:text-yellow-500 text-white">
               Blog
             </Link>
-            <Link href="/Page" className="hover:text-yellow-500 text-white">
+            <Link href="/page" className="hover:text-yellow-500 text-white">
               Pages
             </Link>
             <Link href="/about" className="hover:text-yellow-500 text-white">
@@ -68,22 +124,22 @@ const Navbar = () => {
                   className="pl-4 pr-10 py-2 rounded-full bg-black border border-yellow-500 text-white focus:outline-none"
                 />
                 <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-yellow-500">
-                <FaSearch  />
+                  <FaSearch />
                 </div>
               </div>
               <Link href="/shop" className="hover:text-yellow-500 text-white">
-              <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
-                <FaShoppingBag  />
+                <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
+                  <FaShoppingBag />
                 </div>
               </Link>
-              <Link href="/Signup" className="hover:text-yellow-500 text-white">
-              <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
-                <FaUser  />
+              <Link href="/signup" className="hover:text-yellow-500 text-white">
+                <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
+                  <FaUser />
                 </div>
               </Link>
-              <Link href="/ShopingCart" className="hover:text-yellow-500 text-white">
-              <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
-                <FaShoppingCart  />
+              <Link href="/shoppingcart" className="hover:text-yellow-500 text-white">
+                <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
+                  <FaShoppingCart />
                 </div>
               </Link>
             </div>
@@ -95,5 +151,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
 

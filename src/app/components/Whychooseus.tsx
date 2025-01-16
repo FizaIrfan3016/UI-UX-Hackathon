@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { FaHamburger, FaCookieBite, FaWineGlass } from 'react-icons/fa'
+import Link from 'next/link'
 
 const WhyChoose = () => {
   const foodImages = [
@@ -13,9 +14,9 @@ const WhyChoose = () => {
   ]
 
   const features = [
-    { icon: <FaHamburger />, label: 'Fast Food' },
-    { icon: <FaCookieBite  />, label: 'Lunch' },
-    { icon: <FaWineGlass  />, label: 'Dinner' },
+    { icon: <FaHamburger   className='w-12 h-12'/>, label: 'Fast Food' },
+    { icon: <FaCookieBite  className='w-12 h-12' />, label: 'Lunch' },
+    { icon: <FaWineGlass  className='w-12 h-12'/>, label: 'Dinner' },
   ]
 
   return (
@@ -105,9 +106,11 @@ const WhyChoose = () => {
             <div className="grid grid-cols-3 gap-4">
               {features.map((feature, index) => (
                 <div key={index} className="text-center">
-                  <div className="bg-[#FF9F0D] w-30 h-28 rounded-2xl mx-auto mb-4 flex items-center justify-center text-white">
+                  <div className="bg-[#FF9F0D] w-30 h-28 rounded-2xl mx-auto mb-4 flex items-center justify-center text-white hover:text-gray-200">
                     {/* <div className="w-12 h-12" > */}
+                    <Link href='/menu'>
                     {feature.icon}
+                    </Link>
                     {/* </div> */}
                   </div>
                   <span className="text-white font-medium">{feature.label}</span>

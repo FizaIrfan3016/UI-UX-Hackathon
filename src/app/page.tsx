@@ -7,6 +7,7 @@ import Chefs from './components/Chefs'
 import RestaurantProcess from './components/Restaurant'
 import BlogPost from './components/BlogpostCard'
 import WhyChoose from "./components/Whychooseus";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -54,8 +55,8 @@ export default function Home() {
                 Varius sed pharetra dictum neque massa congue
               </p>  
               <div className="flex justify-center lg:justify-start w-full">
-                <Button size="lg">
-                  See Menu
+                <Button size="lg" className="hover:bg-green-800">
+                  <Link href='/menu'>See Menu </Link>
                 </Button>
               </div>
             </div>

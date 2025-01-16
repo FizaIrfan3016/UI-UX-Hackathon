@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Chefs = () => {
   const chefs = [
@@ -69,7 +70,7 @@ const Chefs = () => {
         
         <div className="flex justify-center">
           <button className="px-8 py-3 border border-[#FF9F0D] text-[#FF9F0D] rounded-full bg-transparent hover:bg-[#FF9F0D] hover:text-white transition-colors duration-300">
-            See More
+           <Link href='/about'> See More </Link>
           </button>
         </div>
       </div>

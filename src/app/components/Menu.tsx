@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import MenuItem from './MenuItem'
 
+
 const Menu = () => {
   const categories = [
     { id: 1, name: 'Breakfast', active: true },
@@ -81,6 +82,7 @@ const Menu = () => {
         {/* Categories */}
         <div className="flex flex-wrap justify-center md:justify-between gap-4 max-w-4xl mx-auto mb-8 md:mb-12">
           {categories.map((category) => (
+            
             <button
               key={category.id}
               className={`text-lg md:text-xl ${
@@ -91,7 +93,9 @@ const Menu = () => {
             >
               {category.name}
             </button>
+            
           ))}
+          
         </div>
 
         {/* Menu Image and Items */}
@@ -106,7 +110,9 @@ const Menu = () => {
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-2 w-full lg:w-1/2">
+          
             {menuItems.map((item, index) => (
+              
               <MenuItem
                 key={index}
                 image={item.image}
@@ -114,7 +120,9 @@ const Menu = () => {
                 description={item.description}
                 price={item.price}
               />
+              
             ))}
+           
           </div>
         </div>
       </div>

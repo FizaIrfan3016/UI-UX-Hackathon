@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { BiComment } from 'react-icons/bi'
+import Link from 'next/link'
 
 const BlogPost = () => {
   const blogPosts = [
@@ -64,7 +65,7 @@ const BlogPost = () => {
                   </div>
                 </div>
                 <h3 className="text-white text-xl font-bold group-hover:text-[#FF9F0D] transition-colors">
-                  {post.title}
+                 <Link href='/blog'> {post.title} </Link>
                 </h3>
               </div>
             </div>
