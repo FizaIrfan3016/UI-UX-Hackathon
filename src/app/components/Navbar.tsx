@@ -132,12 +132,12 @@ const Navbar = () => {
                   <FaShoppingBag />
                 </div>
               </Link>
-              <Link href="/signup" className="hover:text-yellow-500 text-white">
+              <Link href="/Signup" className="hover:text-yellow-500 text-white">
                 <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
                   <FaUser />
                 </div>
               </Link>
-              <Link href="/shoppingcart" className="hover:text-yellow-500 text-white">
+              <Link href="/ShopingCart" className="hover:text-yellow-500 text-white">
                 <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
                   <FaShoppingCart />
                 </div>
