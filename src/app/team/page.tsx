@@ -1,7 +1,9 @@
+"use client"
 import React from 'react';
 import PageHeader from '../components/Pageheader';
-import Link from 'next/link';
 import ChefGrid from '../components/Chefgrid'
+
+// Ourteam page
 
 
 export default function Ourteam(){

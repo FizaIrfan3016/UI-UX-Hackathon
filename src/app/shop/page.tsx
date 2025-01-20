@@ -1,17 +1,32 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import PageHeader from '../components/Pageheader';
 import { FaSearch, FaStar } from 'react-icons/fa';
+import { Foods } from '../../../types/food';
+import { client } from '@/sanity/lib/client';
+import { urlFor } from '@/sanity/lib/image';
+import { three } from '@/sanity/lib/queries';
+
 
 const ShopList = () => {
-  const products = [
-    { id: 1, name: 'Fresh Lime', price: 38.0, oldPrice: 45.0, image: '/menu1.png', onSale: true },
-    { id: 2, name: 'Chocolate Muffin', price: 28.0, image: '/menu2.png', onSale: true },
-    { id: 3, name: 'Burger', price: 21.0, oldPrice: 45.0, image: '/menu3.png' },
-    { id: 4, name: 'Country Burger', price: 45.0, image: '/menu4.png' },
-    { id: 5, name: 'Drink', price: 23.0, oldPrice: 45.0, image: '/menu1.png' },
-    { id: 6, name: 'Pizza', price: 43.0, image: '/menu2.png' },
-  ];
+  // const products = [
+  //   { id: 1, name: 'Fresh Lime', price: 38.0, oldPrice: 45.0, image: '/menu1.png', onSale: true },
+  //   { id: 2, name: 'Chocolate Muffin', price: 28.0, image: '/menu2.png', onSale: true },
+  //   { id: 3, name: 'Burger', price: 21.0, oldPrice: 45.0, image: '/menu3.png' },
+  //   { id: 4, name: 'Country Burger', price: 45.0, image: '/menu4.png' },
+  //   { id: 5, name: 'Drink', price: 23.0, oldPrice: 45.0, image: '/menu1.png' },
+  //   { id: 6, name: 'Pizza', price: 43.0, image: '/menu2.png' },
+  // ];
+
+  const [menu, setMenu] = useState<Foods[]>([])
+  useEffect (()=>{
+         async function fetchMenu(){
+          const fetchedMenu : Foods[] = await client.fetch(three)
+          setMenu(fetchedMenu)
+         }
+         fetchMenu()
+  },[])
 
   const categories = [
     'Sandwiches',
@@ -55,24 +70,34 @@ const ShopList = () => {
 
             {/* Products Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {products.map((product) => (
-                <div key={product.id} className="border rounded-lg overflow-hidden group">
+              {menu.map((menu) => (
+                <div key={menu._id} className="border rounded-lg overflow-hidden group">
                   <div className="relative">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
+                    {/* <Image
+                      src={menu.image}
+                      alt={menu.name}
                       width={400}
                       height={300}
                       className="w-full h-64 object-cover"
-                    />
-                    {product.onSale && (
+                    /> */}
+
+                    {menu.image && (
+                      <Image
+                        src={urlFor(menu.image).url()}
+                        alt={menu.name}
+                        width={400}
+                        height={300}
+                        className="w-full h-64 object-cover"
+                      />
+                    )}
+                    {menu.originalPrice && (
                       <span className="absolute top-4 right-4 bg-orange-500 text-white px-2 py-1 rounded">
                         Sale!
                       </span>
                     )}
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+                    <h3 className="text-lg font-semibold mb-2">{menu.name}</h3>
                     <div className="flex items-center gap-2 mb-2">
                       {[...Array(5)].map((_, i) => ( 
                        <FaStar key={i}  size={16} />
@@ -80,10 +105,10 @@ const ShopList = () => {
                    
                     </div>
                     <div className="flex items-center gap-2">
-                      {product.oldPrice && (
-                        <span className="text-gray-400 line-through">${product.oldPrice.toFixed(2)}</span>
+                      {menu.originalPrice && (
+                        <span className="text-gray-400 line-through">${menu.originalPrice.toFixed(2)}</span>
                       )}
-                      <span className="text-orange-500 font-bold">${product.price.toFixed(2)}</span>
+                      <span className="text-orange-500 font-bold">${menu.price.toFixed(2)}</span>
                     </div>
                   </div>
                 </div>
