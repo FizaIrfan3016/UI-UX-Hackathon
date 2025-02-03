@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ClientProviders } from "./components/Provider";
+
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -13,16 +15,42 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
+    
     <html lang="en">
       <body className={inter.className}>
+        <ClientProviders>
         <Navbar /> 
         {children}
         <Footer />
+        </ClientProviders>
         </body>
     </html>
+    
   );
 }
+
+
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+//   return (
+//     <html lang="en">
+//       <body className={inter.className}>
+//         <ClientProviders>
+//           <main>
+//             <CartProvider>
+//               {children}
+//             </CartProvider>
+//           </main>
+//           <SanityLive />
+//         </ClientProviders>
+//       </body>
+//     </html>
+//   );
+// }

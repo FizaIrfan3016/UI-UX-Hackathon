@@ -1,8 +1,12 @@
-import React from 'react';
+
+
 import Image from "next/image";
 import PageHeader from '../components/Pageheader';
 
+
+
 const ShoppingCart: React.FC = () => {
+ 
   return (
     <div className="bg-white font-sans">
       <PageHeader title="Shopping Cart" currentPage="Shopping Cart" />
@@ -27,6 +31,7 @@ const ShoppingCart: React.FC = () => {
                   height={64}
                   className="object-cover rounded mr-4" 
                 />
+                
                 <span>Burger</span>
               </td>
               <td className="p-4">$10.99</td>
@@ -183,3 +188,5 @@ const ShoppingCart: React.FC = () => {
 };
 
 export default ShoppingCart;
+
+

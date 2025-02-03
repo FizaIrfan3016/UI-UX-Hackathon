@@ -10,4 +10,8 @@ export interface Chefs{
         }
     };
     position : string;
+    slug: {
+        _type:"slug";
+        current: string;
+    }
 }

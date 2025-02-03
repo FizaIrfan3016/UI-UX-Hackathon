@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import PageHeader from '../components/Pageheader';
+import Link from 'next/link';
+
 
 
 const MenuSection = ({ title, image }: { title: string; image: string }) => {
@@ -14,24 +16,50 @@ const MenuSection = ({ title, image }: { title: string; image: string }) => {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 border-b border-gray-200 pb-1 text-center">
             {title}
           </h2>
+          <Link href='/shop'>
           <ul className="space-y-3 pt-4">
             <li className="flex justify-between items-center gap-2 p-1.5 hover:bg-gray-50 rounded-lg">
               <div>
-                <h3 className="font-bold text-gray-800">Sample Dish Name</h3>
-                <p className="text-sm text-gray-600 mt-1">Short description of the dish here</p>
-                <p className="text-xs text-gray-500 mt-1">560 CAL</p>
+                <h3 className="font-bold text-gray-800 hover:text-yellow-500">Pizza</h3>
+                <p className="text-sm text-gray-600 mt-1">Crispy fried chicken bites served with dipping sauce.</p>
+                <p className="text-xs text-gray-500 mt-1">500 CAL</p>
               </div>
-              <span className="text-[#FF9F0D] font-bold text-lg">$32</span>
+              <span className="text-[#FF9F0D] font-bold text-lg">$12</span>
             </li>
             <li className="flex justify-between items-center gap-2 p-1.5 hover:bg-gray-50 rounded-lg">
               <div>
-                <h3 className="font-bold text-gray-800">Another Dish</h3>
-                <p className="text-sm text-gray-600 mt-1">Tasty and delightful option</p>
-                <p className="text-xs text-gray-500 mt-1">700 CAL</p>
+                <h3 className="font-bold text-gray-800  hover:text-yellow-500">Limka</h3>
+                <p className="text-sm text-gray-600 mt-1">Fruit limkas with delicious flavors.</p>
+                <p className="text-xs text-gray-500 mt-1">20 CAL</p>
               </div>
-              <span className="text-[#FF9F0D] font-bold text-lg">$43</span>
+              <span className="text-[#FF9F0D] font-bold text-lg">$21</span>
+            </li>
+            <li className="flex justify-between items-center gap-2 p-1.5 hover:bg-gray-50 rounded-lg">
+              <div>
+                <h3 className="font-bold text-gray-800  hover:text-yellow-500">Chicken Bites with Marconi</h3>
+                <p className="text-sm text-gray-600 mt-1">Chicken tangy bites with cheesy macroni.</p>
+                <p className="text-xs text-gray-500 mt-1">560 CAL</p>
+              </div>
+              <span className="text-[#FF9F0D] font-bold text-lg">$45</span>
+            </li>
+            <li className="flex justify-between items-center gap-2 p-1.5 hover:bg-gray-50 rounded-lg">
+              <div>
+                <h3 className="font-bold text-gray-800  hover:text-yellow-500">Double Decker Burger</h3>
+                <p className="text-sm text-gray-600 mt-1">Mouth melted cheeseburger with delicious flavors.</p>
+                <p className="text-xs text-gray-500 mt-1">560 CAL</p>
+              </div>
+              <span className="text-[#FF9F0D] font-bold text-lg">$38</span>
+            </li>
+            <li className="flex justify-between items-center gap-2 p-1.5 hover:bg-gray-50 rounded-lg">
+              <div>
+                <h3 className="font-bold text-gray-800  hover:text-yellow-500">Country Burger</h3>
+                <p className="text-sm text-gray-600 mt-1">Cheesy meat burger with delicious taste.</p>
+                <p className="text-xs text-gray-500 mt-1">560 CAL</p>
+              </div>
+              <span className="text-[#FF9F0D] font-bold text-lg">$28</span>
             </li>
           </ul>
+          </Link>
         </div>
 
         {/* Image */}

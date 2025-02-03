@@ -102,7 +102,7 @@ const Navbar = () => {
             <Link href="/blog" className="hover:text-yellow-500 text-white">
               Blog
             </Link>
-            <Link href="/page" className="hover:text-yellow-500 text-white">
+            <Link href="/Page" className="hover:text-yellow-500 text-white">
               Pages
             </Link>
             <Link href="/about" className="hover:text-yellow-500 text-white">
@@ -132,7 +132,7 @@ const Navbar = () => {
                   <FaShoppingBag />
                 </div>
               </Link>
-              <Link href="/Signup" className="hover:text-yellow-500 text-white">
+              <Link href="/sign-up" className="hover:text-yellow-500 text-white">
                 <div className="ml-4 text-white cursor-pointer hover:text-yellow-500">
                   <FaUser />
                 </div>

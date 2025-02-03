@@ -1,6 +1,7 @@
 import React from 'react';
-import PageHeader from '../components/Pageheader';
-import Link from 'next/link';
+import PageHeader from '@/app/components/Pageheader';
+
+import { SignUp } from '@clerk/nextjs'
 
 export default function Signup() {
     return(
@@ -8,8 +9,12 @@ export default function Signup() {
         <div className='min-h-screen bg-[#FF9F0D]'>
          <PageHeader title='Signup' currentPage='Signup' />
 
+         <div className="flex justify-center h-screen items-center mx-auto max-w-lg">
+                      {/* Signin Form */}
+                      <SignUp />
+                   </div>
 
-          {/* Signup Form */}
+          {/* Signup Form
       <section className="py-16">
         <div className="container mx-auto max-w-lg bg-white shadow-lg rounded-md p-8">
           <h3 className="text-2xl font-bold mb-6 text-center">Sign Up</h3>
@@ -61,7 +66,7 @@ export default function Signup() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
         </div>
     )
 }

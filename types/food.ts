@@ -11,7 +11,12 @@ export interface Foods {
         }
     };
     category : string;
+    tags : string
     price : number;
     originalPrice : number;
     description : "text";
+    slug: {
+        _type:"slug";
+        current: string;
+    }
 }

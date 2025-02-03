@@ -6,6 +6,7 @@ import { client } from "@/sanity/lib/client";
 import { four } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 
+
 // const chefs = [
 //   { name: "Tahmina Rumi", role: "Chef", image: "/chef1.png" },
 //   { name: "Jorina Begum", role: "Chef", image: "/chef2.png" },
@@ -21,14 +22,7 @@ import { urlFor } from "@/sanity/lib/image";
 //   { name: "Monalisa Holly", role: "Chef", image: "/chef12.png" },
 // ];
 
-// const [chef, setChef] = useState<Chefs[]>([])
-// useEffect (() =>{
-//   async function fetchChef(){
-//     const fetchedChef : Chefs[] = await client.fetch(four)
-//     setChef(fetchedChef);
-//   }
-//   fetchChef(); 
-// })
+
 const ChefGrid = () => {
   const [chef, setChef] = useState<Chefs[]>([])
 useEffect (() =>{
@@ -51,6 +45,7 @@ useEffect (() =>{
                 : "border-4 border-transparent hover:border-purple-600" // Hover effect for other boxes
             }`}
           >
+            
             {/* Chef Image */}
             <div className="flex-1">
               {/* <Image
@@ -77,6 +72,7 @@ useEffect (() =>{
               <h3 className="text-gray-800 font-bold text-lg">{chef.name}</h3>
               <p className="text-gray-600">{chef.position}</p>
             </div>
+            
           </div>
         ))}
       </div>

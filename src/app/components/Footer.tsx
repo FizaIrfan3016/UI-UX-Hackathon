@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { PiClockClockwiseBold } from "react-icons/pi";
-// import { HiClock } from "react-icons/hi";
+
 import Image from "next/image";
+import Link from 'next/link';
 
 
 const Footer = () => {
@@ -61,12 +62,12 @@ return(
                    <div className='space-y-3 sm:space-y-4 col-span-1'>
                     <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white">Useful Links</h2>
                     <ul className="space-y-2 sm:space-y-3 text-white">
-                        <li>About</li>
-                        <li>News</li>
-                        <li>Partners</li>
-                        <li>Team</li>
-                        <li>Menu</li>
-                        <li>Contacts</li>
+                       <Link href='/about'><li>About</li></Link>
+                       <Link href='/blog'><li>News</li></Link> 
+                        <Link href='/team'><li>Partners</li></Link>
+                        <Link href='/team'> <li>Team</li></Link>
+                       <Link href='/menu'> <li>Menu</li></Link>
+                       <Link href='/contact'><li>Contacts</li></Link> 
                     </ul>
 
                    </div>

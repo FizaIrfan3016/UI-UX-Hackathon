@@ -7,6 +7,8 @@ import { Foods } from '../../../types/food';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { three } from '@/sanity/lib/queries';
+import Link from 'next/link';
+import Button from '../components/Button';
 
 
 const ShopList = () => {
@@ -72,15 +74,10 @@ const ShopList = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {menu.map((menu) => (
                 <div key={menu._id} className="border rounded-lg overflow-hidden group">
+                  <Link href={`/food/${menu.slug.current}`}>
                   <div className="relative">
-                    {/* <Image
-                      src={menu.image}
-                      alt={menu.name}
-                      width={400}
-                      height={300}
-                      className="w-full h-64 object-cover"
-                    /> */}
-
+                    
+                      
                     {menu.image && (
                       <Image
                         src={urlFor(menu.image).url()}
@@ -111,17 +108,18 @@ const ShopList = () => {
                       <span className="text-orange-500 font-bold">${menu.price.toFixed(2)}</span>
                     </div>
                   </div>
+                  </Link>
                 </div>
               ))}
             </div>
 
             {/* Pagination */}
             <div className="flex justify-center gap-2 mt-8">
-              <button className="px-3 py-1 border rounded hover:bg-orange-500 hover:text-white">&laquo;</button>
-              <button className="px-3 py-1 border rounded bg-orange-500 text-white">1</button>
-              <button className="px-3 py-1 border rounded hover:bg-orange-500 hover:text-white">2</button>
-              <button className="px-3 py-1 border rounded hover:bg-orange-500 hover:text-white">3</button>
-              <button className="px-3 py-1 border rounded hover:bg-orange-500 hover:text-white">&raquo;</button>
+              <Button className="px-3 py-1 border rounded hover:bg-orange-500 hover:text-white">&laquo;</Button>
+              <Button className="px-3 py-1 border rounded bg-orange-500 text-white">1</Button>
+              <Button className="px-3 py-1 border rounded hover:bg-orange-500 hover:text-white">2</Button>
+              <Button className="px-3 py-1 border rounded hover:bg-orange-500 hover:text-white">3</Button>
+              <Button className="px-3 py-1 border rounded hover:bg-orange-500 hover:text-white">&raquo;</Button>
             </div>
           </div>
 
@@ -135,9 +133,9 @@ const ShopList = () => {
                   placeholder="Search Product"
                   className="flex-1 border p-2 rounded-l focus:outline-none"
                 />
-                <button className="bg-orange-500 text-white px-4 rounded-r">
+                <Button className="bg-orange-500 text-white px-4 rounded-r">
                   <FaSearch />
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -159,9 +157,9 @@ const ShopList = () => {
               <h3 className="text-lg font-semibold mb-4">Filter By Price</h3>
               <div className="flex items-center gap-4">
                 <span>From $0 to $8000</span>
-                <button className="text-sm bg-gray-200 px-4 py-1 rounded">
+                <Button className="text-sm bg-gray-200 px-4 py-1 rounded">
                   Filter
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -170,9 +168,9 @@ const ShopList = () => {
               <h3 className="text-xl font-bold mb-2">Perfect Taste</h3>
               <h2 className="text-2xl font-bold mb-4">Classic Restaurant</h2>
               <div className="text-orange-500 text-xl font-bold mb-4">45.00$</div>
-              <button className="text-white border border-white px-4 py-2 rounded hover:bg-orange-500 hover:border-orange-500 transition-colors">
+              <Button className="text-white border border-white px-4 py-2 rounded hover:bg-orange-500 hover:border-orange-500 transition-colors">
                 Shop Now
-              </button>
+              </Button>
             </div>
           </div>
         </div>
